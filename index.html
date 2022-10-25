@@ -22,6 +22,93 @@
             left: 0;
             opacity: 0.3;
         }
+
+        body {
+            text-align: center;
+        }
+
+        .header {
+            position: relative;
+            bottom: 0%;
+            font-size: 350%;
+            color: white;
+            font-family: Arial Black,Arial Bold,Gadget,sans-serif; 
+        }
+
+        p {
+            padding-left: 10px;
+            padding-right: 10px;
+            position: relative;
+            bottom: 5%;
+            font-size: 100%;
+            color: white;
+            font-family: Arial Black,Arial Bold,Gadget,sans-serif; 
+        }
+
+        h2 {
+            position: relative;
+            bottom: 5%;
+            font-size: 200%;
+            color: white;
+            font-family: Arial Black,Arial Bold,Gadget,sans-serif; 
+        }
+
+        .display {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            grid-auto-rows: 200px;
+            grid-template-areas:
+                ". a a ."
+                ". a a .";
+        }
+
+        .box {
+            grid-area: a;
+            align-self: center;
+            justify-self: center;
+            width: 1fr;
+            height: 1fr;
+            border: 5px solid transparent;
+            border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+            border-image-slice: 1;
+        }
+
+        .average4k {
+            grid-area: a;
+            align-self: center;
+            justify-self: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-image: url("assets/Average4KBlurImage.png");
+
+            height: 100%;
+            transition: background 0.2s linear;
+            border: 5px solid transparent;
+            border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+            border-image-slice: 1;
+        }
+        .average4k:hover {
+            grid-area: a;
+            align-self: center;
+            justify-self: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-image: url("assets/Average4KGameplay.gif");
+            height: 100%;
+            transition: background 0.2s linear;
+            border: 5px solid transparent;
+            border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+            border-image-slice: 1;
+        }
+        
+        img {
+            position: relative;
+            padding-bottom: 10px;
+        }
+
         @keyframes sf-fly-by-1 {
             from {
                 transform: translateZ(-600px);
@@ -96,7 +183,28 @@
     <div class="bg"></div>
 
     <div class="star-field">
-    <div class="layer"></div>
-    <div class="layer"></div>
-    <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+    </div>
+    <body>
+        <div class="header">
+            <h1>Kade</h1>
+        </div>
+        <p>
+            All of my projects
+        </p>
+        <div class="display">
+            <div class ="box">
+                <div class="average4k">
+                    <h2>Average4K</h2>
+                    <p>Average4K is a Multiplayer Focused Competitive rhythm game built on its own engine from the ground up. Allowing for Steam Workshop Support for Chart Packs, and Skins.</p>
+                    <p>Average4K also allows for full customization of the game with it's skins and menus, and even lets players script their own modcharts.</p>
+                    <a href="https://store.steampowered.com/app/1828580/Average4k/">
+                        <img src="assets/SteamLogo.png" width="25%" ></img>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
