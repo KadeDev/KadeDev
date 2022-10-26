@@ -55,27 +55,23 @@
 
         .display {
             display: grid;
+            
             grid-template-columns: repeat(4, 1fr);
             gap: 10px;
-            grid-auto-rows: 200px;
             grid-template-areas:
-                ". a a ."
-                ". a a .";
+                ". c c b b a a ."
+                ". c c b b a a .";
         }
 
         .box {
-            grid-area: a;
             align-self: center;
             justify-self: center;
             width: 1fr;
             height: 1fr;
             border: 5px solid transparent;
-            border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
-            border-image-slice: 1;
         }
 
         .average4k {
-            grid-area: a;
             align-self: center;
             justify-self: center;
             background-size: cover;
@@ -90,7 +86,6 @@
             border-image-slice: 1;
         }
         .average4k:hover {
-            grid-area: a;
             align-self: center;
             justify-self: center;
             background-size: cover;
@@ -102,8 +97,70 @@
             border: 5px solid transparent;
             border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
             border-image-slice: 1;
+            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
         }
         
+        .tricky {
+            align-self: center;
+            justify-self: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-image: url("assets/TrickyBlurImage.png");
+
+            height: 100%;
+            transition: background 0.2s linear;
+            border: 5px solid transparent;
+            border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+            border-image-slice: 1;
+        }
+        .tricky:hover {
+            align-self: center;
+            justify-self: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-image: url("assets/TrickyGameplay.gif");
+            height: 100%;
+            transition: background 0.2s linear;
+            border: 5px solid transparent;
+            border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+            border-image-slice: 1;
+            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+
+        }
+
+        .hex {
+            align-self: center;
+            justify-self: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-image: url("assets/HexBlurImage.png");
+
+            height: 100%;
+            transition: background 0.2s linear;
+            border: 5px solid transparent;
+            border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+            border-image-slice: 1;
+        }
+        .hex:hover {
+            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+            align-self: center;
+            justify-self: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-image: url("assets/HexGameplay.gif");
+            height: 100%;
+            transition: background 0.2s linear;
+            border: 5px solid transparent;
+            border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+            border-image-slice: 1;
+
+        }
+
+
         img {
             position: relative;
             padding-bottom: 10px;
@@ -195,16 +252,50 @@
             All of my projects
         </p>
         <div class="display">
-            <div class ="box">
+            <div class ="box" style="grid-area: c;">
                 <div class="average4k">
                     <h2>Average4K</h2>
-                    <p>Average4K is a Multiplayer Focused Competitive rhythm game built on its own engine from the ground up. Allowing for Steam Workshop Support for Chart Packs, and Skins.</p>
+                    <p>Average4K is a Multiplayer Focused Competitive rhythm game built on its own engine from the ground up in cpp. Allowing for Steam Workshop Support for Chart Packs, and Skins.</p>
                     <p>Average4K also allows for full customization of the game with it's skins and menus, and even lets players script their own modcharts.</p>
                     <a href="https://store.steampowered.com/app/1828580/Average4k/">
                         <img src="assets/SteamLogo.png" width="25%" ></img>
                     </a>
                 </div>
             </div>
+            <div class="box" style="grid-area: b;">
+                <div class="tricky">
+                    <h2>Vs. Tricky</h2>
+                    <p>Vs. Tricky is a Friday Night Funkin' mod built on Haxe using the Flixel Rendering Framework using the original source code as a base.</p>
+                    <p>This is also built on an "engine" of mine called Kade Engine, which itself is a mod of Friday Night Funkin' as well.</p>
+                    <p>The mod is about a character from the internet series Madness called Tricky.</p>
+                    <p>I was the main programmer on this</p>
+                    <a href="https://gamebanana.com/mods/44334">
+                        <img src="assets/GameBananaLogo.png" width="25%" ></img>
+                    </a>
+                    <a href="https://github.com/KadeDev/trickster/">
+                        <img src="assets/GithubLogo.png" width="25%" ></img>
+                    </a>
+                </div>
+            </div>
+            <div class="box">
+                <div class="hex" style="grid-area: a;">
+                    <h2>Vs. Hex</h2>
+                    <p>Vs. Hex is a Friday Night Funkin' mod also like Vs. Tricky. Using the same framework and "engine." as Vs. Tricky. This did come out after Vs. Tricky v2, but was a standalone mod before it as well.</p>
+                    <p>The mod is about a robot who likes to play basket ball, and it even has a super cool modchart made by TaroNuke (the creator of a rhythm game called NotITG) which is pretty cool.</p>
+                    <p>Very proud of this!</p>
+                    <p>I was the main programmer on this</p>
+                    <a href="https://gamebanana.com/mods/44225">
+                        <img src="assets/GameBananaLogo.png" width="25%" ></img>
+                    </a>
+                    <a href="https://github.com/KadeDev/Hex-The-Weekend-Update/">
+                        <img src="assets/GithubLogo.png" width="25%" ></img>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div style="top: 50%">
+            <h2>Contact</h2>
+            <p>For Business Inquires please email me at kadedevbusiness@gmail.com</p>
         </div>
     </body>
 </html>
